@@ -27,9 +27,9 @@ cp $SCRIPT_DIR/generate_config_file.py $JOBDIR/
 cd $JOBDIR/
 
 # make parameter file from template
-config=`printf bdnmc_parameters_cenns750_jobid%03d.txt ${JOBID}`
+config=`printf bdnmc_parameters_cenns750_jobid%03d.dat ${JOBID}`
 python generate_config_file.py $PARAM_FILE $JOBID $config  $SCRIPT_DIR/parameter_file_cenns750_template.dat $JOBDIR
 echo "Generated "$config
 
 $BDNMC_DIR/build/./main $config
-cp * $OUTDIR/
+cp *.dat $OUTDIR/
