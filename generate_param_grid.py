@@ -31,14 +31,14 @@ def generate_param_file( param_file, alpha_d=0.5, Mv_scale=3.0 ):
 
     
     parfile = open(param_file,'w')
-    print>>parfile,"epsilon",'\t',"Y",'\t',"M_chi"
+    print>>parfile,"epsilon",'\t',"Y",'\t',"M_chi",'\t',"M_v",'\t',"a_D"
     pars = []
     for Y in Y_val_list:
         for M in M_val_list:
             # convert to epsilon, the coupling parameter
             eps = sqrt(Y*pow(Mv_scale,4)*alpha_d)
             pars.append( (eps,Y,M) )
-            print>>parfile,"%.2e"%(eps),'\t',"%.2e"%(Y),'\t',M
+            print>>parfile,"%.2e"%(eps),'\t',"%.2e"%(Y),'\t',M,'\t',M*Mv_scale,'\t',alpha_d
     print "generated ",len(pars)," parameters into ",param_file
     parfile.close()
 
