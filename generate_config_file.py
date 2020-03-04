@@ -14,10 +14,10 @@ def get_params_fromfile( param_file, lineno ):
     parfile = open(param_file,'r')
     parlines = parfile.readlines()
 
-    if lineno >= len(parlines) or lineno<0:
+    if lineno+1 >= len(parlines) or lineno<0:
         return None
 
-    pars = parlines[lineno].split('\t')
+    pars = parlines[lineno+1].split('\t')
     pardict = {"epsilon":float(pars[0]),
                "Y":float(pars[1]),
                "M_chi":float(pars[2]),
