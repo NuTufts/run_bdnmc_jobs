@@ -39,7 +39,6 @@ beam_energy 1.0
 #Currently pi0_decay,  eta_decay, V_decay and phi_decay, are supported. 
 #For baryonic, we support pi0_decay_baryonic, eta_decay_baryonic, V_decay_baryonic, phi_decay_baryonic, piminus_capture
 production_channel pi0_decay
-#production_channel eta_decay
 
 #Choosing a production distribution is optional, but it must be grouped with the relevant production_channel entry 
 production_distribution pi0_sanfordwang
@@ -63,8 +62,8 @@ production_distribution pi0_sanfordwang
 
 
 #Here we also call a second production mode.
-#production_channel eta_decay
-#production_distribution k0_sanfordwang
+production_channel eta_decay
+production_distribution k0_sanfordwang
 
 #This invokes the bremsstrahlung production channel. This works, but may be 
 #unreliable around the rho resonance. The zmin/zmax values seem reasonable 
@@ -127,8 +126,9 @@ detector cylinder
 x-position -19.5
 y-position 0.0
 z-position -19.39
-radius 0.3683
-length 0.7366
+#z-position 0.0
+radius 0.35475
+length 0.9351
 det-theta 1.57
 det-phi   0.0
 
@@ -137,7 +137,7 @@ det-phi   0.0
 #mass is only important for coherent scattering, can be set to anything.
 #anything not defined will be set to zero.
 material Argon
-number_density 3.3569485e+25
+number_density 2.1035093e+22
 proton_number 18
 neutron_number 22
 electron_number 18
